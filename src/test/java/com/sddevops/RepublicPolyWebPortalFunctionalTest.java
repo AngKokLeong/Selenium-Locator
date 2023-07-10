@@ -41,13 +41,15 @@ public class RepublicPolyWebPortalFunctionalTest {
         webDriver.navigate().to(TEST_URL);
 
         // Find WebElement by Id: content
-        WebElement webElement = webDriver.findElement(By.id("content"));
+        WebElement webElement = webDriver.findElement(By.id("main-banner"));
+        WebElement slickListDraggableWebElement = webElement.findElement(By.className("slick-list draggable"));
+        WebElement slickTrackWebElement = slickListDraggableWebElement.findElement(By.className("slick-track"));
 
         // Get attribute role of WebElement
-        String attribute = webElement.getAttribute("role");
+        String attribute = slickTrackWebElement.getAttribute("role");
 
-        // AssertEquals that WebElement's role attribute is equals toolbar
-        Assert.assertEquals(attribute, "toolbar");
+        // AssertEquals that WebElement's role attribute is equals listbox
+        Assert.assertEquals(attribute, "listbox");
     }
 
     @Test

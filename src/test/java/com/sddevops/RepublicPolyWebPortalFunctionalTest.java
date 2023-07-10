@@ -58,7 +58,7 @@ public class RepublicPolyWebPortalFunctionalTest {
         WebElement webElementByName = webDriver.findElement(By.name("keywords"));
 
         // Get Attribute content of WebElement
-        String content = webElementByName.getAttribute("content")
+        String content = webElementByName.getAttribute("content");
 
         // AssertTrue that WebElement's content attribute contains the following String "Republic Polytechnic"
         Assert.assertTrue(content.contains("Republic Polytechnic"));

@@ -42,7 +42,7 @@ public class RepublicPolyWebPortalFunctionalTest {
 
         // Find WebElement by Id: content
         WebElement webElement = webDriver.findElement(By.id("main-banner"));
-        WebElement slickListDraggableWebElement = webElement.findElement(By.className("slick-list draggable"));
+        WebElement slickListDraggableWebElement = webElement.findElement(By.className("slick-list"));
         WebElement slickTrackWebElement = slickListDraggableWebElement.findElement(By.className("slick-track"));
 
         // Get attribute role of WebElement

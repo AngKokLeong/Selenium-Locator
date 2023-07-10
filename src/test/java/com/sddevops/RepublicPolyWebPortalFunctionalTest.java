@@ -49,6 +49,20 @@ public class RepublicPolyWebPortalFunctionalTest {
         Assert.assertEquals(attribute, "toolbar");
     }
 
+    @Test
+    public void findByName(){
+        // Navigate to practice website
+        webDriver.navigate().to(TEST_URL);
+
+        // Find WebElement by Name: keywords
+        WebElement webElementByName = webDriver.findElement(By.name("keywords"));
+
+        // Get Attribute content of WebElement
+        String content = webElementByName.getAttribute("content")
+
+        // AssertTrue that WebElement's content attribute contains the following String "Republic Polytechnic"
+        Assert.assertTrue(content.contains("Republic Polytechnic"));
+    }
 
     @Test
     public void findByClassName(){

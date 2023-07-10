@@ -80,6 +80,28 @@ public class RepublicPolyWebPortalFunctionalTest {
         Assert.assertEquals(webElementListSize, 7);
     }
 
+    @Test
+    public void testHomeSearch(){
+
+        // Navigate to practice website
+        webDriver.navigate().to(TEST_URL);
+
+        // Find WebElement by Class Name: collapsed
+        WebElement webElementCollapsed = webDriver.findElement(By.className("collapsed"));
+
+        // Click on WebElement
+        webElementCollapsed.click();
+
+        // Find 2nd WebElement by Class Name: homesearch
+        WebElement webElementHomeSearch = webDriver.findElement(By.className("homesearch"));
+
+        // send keys "devops" to 2nd WebElement
+        webElementHomeSearch.sendKeys("devops");
+
+        // send keys "Keys.ENTER" to 2nd WebElement
+        webElementHomeSearch.sendKeys("Keys.ENTER");
+    }
+
 
 
 }

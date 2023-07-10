@@ -15,6 +15,8 @@ import java.nio.file.*;
 public class RepublicPolyWebPortalFunctionalTest {
     
     private WebDriver webDriver;
+    private static String TEST_URL = "https://www.rp.edu.sg";
+
 
     @BeforeTest
     public void beforeTest(){
@@ -29,5 +31,23 @@ public class RepublicPolyWebPortalFunctionalTest {
     public void afterTest(){
         webDriver.quit();
     }
+
+
+    @Test
+    public void findById(){
+        // Navigate to practice website
+        webDriver.navigate().to(TEST_URL);
+
+        // Find WebElement by Id: content
+        WebElement webElement = webDriver.findElement(By.id("content"));
+
+        // Get attribute role of WebElement
+        String attribute = webElement.getAttribute("role");
+
+        // AssertEquals that WebElement's role attribute is equals toolbar
+        Assert.assertEquals(attribute, "toolbar");
+    }
+
+
 
 }

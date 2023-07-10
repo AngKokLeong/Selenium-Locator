@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
 
+
 import java.nio.file.*;
 import java.util.List;
 
@@ -102,6 +103,19 @@ public class RepublicPolyWebPortalFunctionalTest {
         webElementHomeSearch.sendKeys("Keys.ENTER");
     }
 
+    @Test
+    public void findByCSSSelector(){
 
+        // Navigate to practice website
+        webDriver.navigate().to(TEST_URL);
+
+        // Find WebElement by css selector img and title=Republic Polytechnic
+        WebElement imgWebElement = webDriver.findElement(By.cssSelector("img"));
+
+        String title = imgWebElement.getAttribute("title");
+
+        // Assert Equals that WebElement title is Republic Polytechnic
+        Assert.assertEquals(title, "Republic Polytechnic");
+    }
 
 }

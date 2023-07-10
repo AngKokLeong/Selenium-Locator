@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
 
 import java.nio.file.*;
+import java.util.List;
 
 public class RepublicPolyWebPortalFunctionalTest {
     
@@ -46,6 +47,23 @@ public class RepublicPolyWebPortalFunctionalTest {
 
         // AssertEquals that WebElement's role attribute is equals toolbar
         Assert.assertEquals(attribute, "toolbar");
+    }
+
+
+    @Test
+    public void findByClassName(){
+
+        // Navigate to practice website
+        webDriver.navigate().to(TEST_URL);
+
+        // Find List<WebElement> by class name: hover
+        List<WebElement> webElementList = webDriver.findElements(By.className("hover"));
+
+        // Get size of List<WebElement> using the size function
+        Integer webElementListSize = webElementList.size();
+
+        // AssertEquals that List<WebElement> is equal to 7
+        Assert.assertEquals(webElementListSize, 7);
     }
 
 

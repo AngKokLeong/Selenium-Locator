@@ -109,8 +109,32 @@ public class RepublicPolyWebPortalFunctionalTest {
         // Navigate to practice website
         webDriver.navigate().to(TEST_URL);
 
+
+        // Navigate to practice website
+        webDriver.navigate().to(TEST_URL);
+
+
+
         // Find WebElement by css selector img and title=Republic Polytechnic
-        WebElement imgWebElement = webDriver.findElement(By.cssSelector("img"));
+        WebElement wrapperWebElement = webDriver.findElement(By.id("wrapper"));
+
+        WebElement headerWebElement = wrapperWebElement.findElement(By.id("header"));
+
+        WebElement sfContentBlockWebElement = headerWebElement.findElement(By.className("sfContentBlock"));
+
+        WebElement rpHeaderWebElement = sfContentBlockWebElement.findElement(By.className("rp-header"));
+
+        WebElement containerWebElement = rpHeaderWebElement.findElement(By.className("container"));
+
+        WebElement rowWebElement = containerWebElement.findElement(By.className("row"));
+
+        WebElement colMdWebElement = rowWebElement.findElement(By.className("col-md-2"));
+
+        WebElement rpLogoWebElement = colMdWebElement.findElement(By.className("rp-logo"));
+
+        WebElement aWebElement = rpLogoWebElement.findElement(By.tagName("a"));
+
+        WebElement imgWebElement = aWebElement.findElement(By.tagName("img"));
 
         String title = imgWebElement.getAttribute("title");
 
